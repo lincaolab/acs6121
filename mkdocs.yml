@@ -1,6 +1,6 @@
-site_name: "Robotics in the Diamond: ROS"
-site_url: https://tom-howard.github.io/ros/
-site_description: Practical ROS Courses in The Diamond at The University of Sheffield. 
+site_name: "ACS6121 Labs"
+site_url: https://lincaolab.github.io/acs6121/
+site_description: Lab material for the ACS6121 Course at The University of Sheffield. 
 theme:
   name: material
   custom_dir: overrides
@@ -38,8 +38,8 @@ theme:
     - content.code.annotate
   
 # copyright: Copyright &copy; 2023 The University of Sheffield
-repo_url: https://github.com/tom-howard/ros
-repo_name: tom-howard/ros
+repo_url: https://github.com/lincaolab/acs6121
+repo_name: lincaolab/acs6121
 
 plugins:
     - search
