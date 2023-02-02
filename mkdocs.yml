@@ -38,8 +38,8 @@ theme:
     - content.code.annotate
   
 # copyright: Copyright &copy; 2023 The University of Sheffield
-repo_url: https://github.com/lincaolab/acs6121
-repo_name: lincaolab/acs6121
+# repo_url: https://github.com/lincaolab/acs6121
+# repo_name: lincaolab/acs6121
 
 plugins:
     - search
