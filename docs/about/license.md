@@ -2,6 +2,10 @@
 title: "License"
 ---
 
+This site has been adapted from the [Robotics in the Diamond: ROS](https://tom-howard.github.io/ros/) course site by [Dr Tom Howard](https://www.sheffield.ac.uk/engineering/diamond-engineering/our-staff/tom-howard) (published under a [Creative Commons BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/) license).
+
+The original material has been adapted slightly to suit the ACS6121 course.
+
 # License
 
 <p align="center">
