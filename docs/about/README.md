@@ -1,8 +1,8 @@
 ---
-title: "Welcome"
+title: "About"
 ---
  
-# Welcome
+# About
 
 This is the home of some practical lab courses developed by Dr Tom Howard, a University Teacher at the University of Sheffield. The material here is designed for teaching **ROS (the Robot Operating System)**, mobile robots, and autonoumous navigation. It has been developed to support a range of **practical teaching activities** that take place in [The Diamond](https://www.sheffield.ac.uk/engineering/diamond) for a range of different degree courses, including ACS6121.
 
