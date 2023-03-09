@@ -387,7 +387,9 @@ An Action Server provides **feedback** messages at regular intervals whilst perf
     ***
 
 1. Navigate to the `src` folder of this package, create a file called `action_client.py` (using `touch`) and set this to be executable (using `chmod`).        
+
 1. Review [the code provided here](action_client), and the annotations, then copy and paste the code into your newly created `action_client.py` file. <a name="ex2_ret"></a>
+
 1. Then, in **TERMINAL 2**, execute the same launch file as before but this time with a couple of additional arguments:
 
     ***
@@ -432,6 +434,7 @@ An Action Server provides **feedback** messages at regular intervals whilst perf
     ```
 
     We can set up our action client to monitor these status codes in a `while` loop, and then perform other operations inside this loop until the action has completed (or has been stopped for another reason).
+
 1. To do this, replace the `client.wait_for_result()` line in the `concurrent_action_client.py` file with the following code:
 
     ```python
