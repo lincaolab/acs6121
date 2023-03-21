@@ -212,14 +212,14 @@ Another topic that should have appeared when you ran `rostopic list` earlier is 
     ```
     ***
 
-1. In **TERMINAL 3** enter `A` a couple of times to make the robot rotate on the spot.  Observe how the odometry data changes in **TERMINAL 2**.  Is there anything in the `twist` part of the `/odom` message that corresponds to the `angular vel` that you are setting in **TERMINAL 3**? 
-1. Now press the `S` key to halt the robot, then press `W` a couple of times to make the robot drive forwards.  How does the `twist` part of the message now correspond to the `linear vel` setting in **TERMINAL 3**?
-1. Now press `D` a couple of times and your robot should start to move in a circle.  What linear and angular velocities are you requesting in **TERMINAL 3**, and how are these represented in the `twist` part of the `/odom` message?  What about the `pose` part of the message?  How is this data changing as your robot moves in a circular path.
+1. In **TERMINAL 3** enter `a` a couple of times to make the robot rotate on the spot.  Observe how the odometry data changes in **TERMINAL 2**.  Is there anything in the `twist` part of the `/odom` message that corresponds to the `angular vel` that you are setting in **TERMINAL 3**? 
+1. Now press the `s` key to halt the robot, then press `w` a couple of times to make the robot drive forwards.  How does the `twist` part of the message now correspond to the `linear vel` setting in **TERMINAL 3**?
+1. Now press `d` a couple of times and your robot should start to move in a circle.  What linear and angular velocities are you requesting in **TERMINAL 3**, and how are these represented in the `twist` part of the `/odom` message?  What about the `pose` part of the message?  How is this data changing as your robot moves in a circular path.
     
     !!! note "Question"
         What do you think `twist` and `pose` are actually telling us?
     
-1. Press `S` in **TERMINAL 3** to stop the robot (but leave the `turtlebot3_teleop_keyboard` node running).  Then, press `Ctrl+C` in **TERMINAL 2** to shut down the `rostopic echo` process. 
+1. Press `s` in **TERMINAL 3** to stop the robot (but leave the `turtlebot3_teleop_keyboard` node running).  Then, press `Ctrl+c` in **TERMINAL 2** to shut down the `rostopic echo` process. 
 
 1. Let's look at the `pose` part of the `Odometry` message in more detail now. With the robot stationary, use `rosrun` to run a Python node that we have created to help illustrate how this relates to the robot's position and orientation in its environment: 
 
@@ -237,7 +237,7 @@ Another topic that should have appeared when you ran `rostopic list` earlier is 
     !!! note "Question"
         Which pose parameters *haven't* changed, and is this what you would expect (considering [the robot's principal axes, as illustrated above](#principal-axes))?
     
-1. Press `Ctrl+C` in **TERMINAL 2** and **TERMINAL 3**, to stop the `robot_pose.py` and `turtlebot3_teleop` nodes.  Then, close down **TERMINAL 3** so that only one Windows Terminal application remains open with 2 active tabs: **TERMINAL 1** and **TERMINAL 2**.
+1. Press `Ctrl+c` in **TERMINAL 2** and **TERMINAL 3**, to stop the `robot_pose.py` and `turtlebot3_teleop` nodes.  Then, close down **TERMINAL 3** so that only one Windows Terminal application remains open with 2 active tabs: **TERMINAL 1** and **TERMINAL 2**.
 
 ### What is Odometry? {#odometry}
 
