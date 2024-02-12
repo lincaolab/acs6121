@@ -6,7 +6,7 @@ title: Building Command-Line Interfaces (CLIs) for Python Nodes
 
 Suppose we have a very simple node such as [the `publisher.py` node that you created in Week 1](../../la1/week1/publisher). This node publishes `std_msgs/String` type messages to a topic called `"chatter"`. Let's have a look at an alternative version of that node that takes in command-line arguments and publishes *those* to the `"chatter"` topic instead.
 
-Take a look at [the `publisher_cli.py` node from the `tuos_ros_examples` package](https://github.com/tom-howard/COM2009/blob/main/tuos_ros_examples/src/publisher_cli.py). 
+Take a look at [the `publisher_cli.py` node from the `tuos_examples` package](https://github.com/tom-howard/tuos_ros/blob/main/tuos_examples/src/publisher_cli.py). 
 
 Here, we use [the Python `argparse` module](https://realpython.com/command-line-interfaces-python-argparse/) to allow us to work with arguments that are passed to the node from the command-line:
 
@@ -20,7 +20,7 @@ We instantiate `argparse` in the `__init__()` method of the `Publisher()` class 
 cli = argparse.ArgumentParser(...)
 cli.add_argument(...)
 ```
-(See [the code](https://github.com/tom-howard/COM2009/blob/main/tuos_ros_examples/src/publisher_cli.py) for more details)
+(See [the code](https://github.com/tom-howard/tuos_ros/blob/main/tuos_examples/src/publisher_cli.py) for more details)
 
 Arguments that we define with a `-` at the front will be *optional*, i.e. we don't have to provide these every time we run the node. We *do*, however, need to assign a *default value* for each optional argument in cases where no value is supplied, e.g.:
 
@@ -41,7 +41,7 @@ self.args = cli.parse_args(rospy.myargv()[1:])
 Having defined the CLI above, `argparse` then automatically generates *help text* for us! Try running the following command to see this in action:
 
 ```bash
-rosrun tuos_ros_examples publisher_cli.py -h
+rosrun tuos_examples publisher_cli.py -h
 ```
 
 !!! warning
@@ -50,13 +50,13 @@ rosrun tuos_ros_examples publisher_cli.py -h
 Run the node as it is (using `rosrun`) and see what happens:
 
 ```bash
-rosrun tuos_ros_examples publisher_cli.py
+rosrun tuos_examples publisher_cli.py
 ```
 
 Stop the node (using `Ctrl+C`) and then run it again, but this time providing a value for the `number` variable, via the CLI:
 
 ```bash
-rosrun tuos_ros_examples publisher_cli.py -number 1.5
+rosrun tuos_examples publisher_cli.py -number 1.5
 ```
 
 ??? info

@@ -22,7 +22,7 @@ Having built a CLI for our Python Node on the previous page, we'll now look at h
       <arg name="roslaunch_colour" default="Black" />
       <arg name="roslaunch_number" default="0.999" />
 
-      <node pkg="tuos_ros_examples" type="publisher_cli.py"
+      <node pkg="tuos_examples" type="publisher_cli.py"
         name="publisher_cli_node" output="screen"
         args="-colour $(arg roslaunch_colour) -number $(arg roslaunch_number)" />
     </launch>
@@ -35,7 +35,7 @@ Having built a CLI for our Python Node on the previous page, we'll now look at h
     <arg name="roslaunch_number" default="0.999" />    
     ```
 
-    Next, we use a `<node>` tag to launch the `publisher_cli.py` node from the `tuos_ros_examples` package. All of that should be familiar to you from [Week 1](../../la1/week1/#package_attributes). What's new here however is the additional `args` attribute:
+    Next, we use a `<node>` tag to launch the `publisher_cli.py` node from the `tuos_examples` package. All of that should be familiar to you from [Week 1](../../la1/week1/#package_attributes). What's new here however is the additional `args` attribute:
 
     ```xml
     args="-colour $(arg roslaunch_colour) -number $(arg roslaunch_number)"

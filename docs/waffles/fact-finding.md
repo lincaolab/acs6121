@@ -76,7 +76,7 @@ Use the `rostopic echo` command to interrogate the ROS network running between y
 
 #### Mission 5: Object Detection
 
-In general, image detection gets a little more challenging in the real-world, where the same object might appear (to a robot's camera) to have slightly different colour tones under different light conditions, from different angles, in different levels of shade, etc. In [Exercise 3 of Week 6](../../labs/la1/week6/#ex3) you may well have built an extremely robust `colour_search.py` node to detect each of the four coloured pillars in the `tuos_ros_simulations/coloured_pillars` world. See how well this now works in the real world now by running the same code on your real Waffle.
+In general, image detection gets a little more challenging in the real-world, where the same object might appear (to a robot's camera) to have slightly different colour tones under different light conditions, from different angles, in different levels of shade, etc. In [Exercise 3 of Week 6](../../labs/la1/week6/#ex3) you may well have built an extremely robust `colour_search.py` node to detect each of the four coloured pillars in the `tuos_simulations/coloured_pillars` world. See how well this now works in the real world now by running the same code on your real Waffle.
 
 !!! question "Questions"
     1. Without changing any of your code, is the robot able to detect any of our *real* coloured pillars in the robot arena?
