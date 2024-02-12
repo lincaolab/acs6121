@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import rospy # (1)!
-from tuos_ros_msgs.srv import SetBool, {BLANK} # (2)!
+from tuos_msgs.srv import SetBool, {BLANK} # (2)!
 import sys # (3)!
 
 service_name = "move_service" # (4)!

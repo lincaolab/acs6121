@@ -115,12 +115,12 @@ To start with, let's set up a service and learn how to make a call to it from th
         ```
         ***
         
-    1. Create the `week4_services` package and define `rospy`, `geometry_msgs` and `tuos_ros_msgs` as dependencies:
+    1. Create the `week4_services` package and define `rospy`, `geometry_msgs` and `tuos_msgs` as dependencies:
             
         ***
         **TERMINAL 2:**
         ```bash
-        catkin_create_pkg week4_services rospy geometry_msgs tuos_ros_msgs
+        catkin_create_pkg week4_services rospy geometry_msgs tuos_msgs
         ```
         ***
 
@@ -205,7 +205,7 @@ To start with, let's set up a service and learn how to make a call to it from th
     ```txt
     Node: /move_service_server
     URI: #####
-    Type: tuos_ros_msgs/SetBool
+    Type: tuos_msgs/SetBool
     Args: request_signal
     ```
     ***
@@ -264,15 +264,15 @@ rosservice info /move_service:
 
 Node: /move_service_server
 URI: #####
-Type: tuos_ros_msgs/SetBool
+Type: tuos_msgs/SetBool
 Args: request_signal
 ```
 
 **Type** tells us the *type of message* this service uses. Just like a topic message there are two parts to this definition:
 
-    tuos_ros_msgs/SetBool
+    tuos_msgs/SetBool
 
-1. The service message is part of a package called `tuos_ros_msgs`
+1. The service message is part of a package called `tuos_msgs`
 1. The message itself is called `SetBool`
 
 We can find out more about this using the `rossrv` command, which has the same usage as the `rosmsg` command that you have already used previously (for interrogating *topic messages*). `rossrv` gives us information about all the service messages that are *installed on our system* and that are available for us to use in any ROS applications that we create:
@@ -280,7 +280,7 @@ We can find out more about this using the `rossrv` command, which has the same u
 ***
 **TERMINAL 3:**
 ```bash
-rossrv info tuos_ros_msgs/SetBool
+rossrv info tuos_msgs/SetBool
 ```
 ... which gives: 
 
@@ -305,7 +305,7 @@ string response_message <-- Response (Parameter 2/2)
 
 In order to *Call* a service, we need to provide data to it in the format specified in the **Request** section of the message. A service *Server* (like the [Python node we created above](move_server#code)) will then send data back to the caller in the format specified in the **Response** section of the message.
 
-The `tuos_ros_msgs/SetBool` service message that we're working with here has a **one** request parameter:
+The `tuos_msgs/SetBool` service message that we're working with here has a **one** request parameter:
 
 1. A *boolean* input called `request_signal`  
     ...which is the only thing we need to send to the Service Server in order to call the service.
@@ -350,7 +350,7 @@ As well as calling a service from the command-line we can also build Python node
 
 In this exercise you will create your own service Server to make the Waffle perform a specific movement for a given amount of time and then stop.
 
-A service message called `tuos_ros_msgs/TimedMovement` has already been set up to help you do this. Interrogate this using the `rossrv` command (as described [above](#rossrv)) to work out how to use this message in your Python Server node.
+A service message called `tuos_msgs/TimedMovement` has already been set up to help you do this. Interrogate this using the `rossrv` command (as described [above](#rossrv)) to work out how to use this message in your Python Server node.
 
 The service should respond to four different movement commands to invoke four different actions:
 
@@ -385,7 +385,7 @@ The Server should make the robot perform the desired action for a duration that 
         ***
 
 1. Open the new `timed_move_server.py` file in VS Code and modify it as follows:
-    1. Change the imports to utilise the correct service message type (`tuos_ros_msgs/TimedMovement`).
+    1. Change the imports to utilise the correct service message type (`tuos_msgs/TimedMovement`).
     1. Modify the `rospy.Service` call to use the `TimedMovement` service message type.
     1. Develop the `callback_function()` to:
         1. Process the **two** parameters that will be provided to the server via the `service_request` input argument.  
@@ -443,7 +443,7 @@ For this exercise you need to build another Python *Server* node which must perf
 1. The server must do this by considering *two inputs* received from a *Service Request*:
     1. The speed (in m/s) at which to approach the object.
     1. The distance (in meters) at which the robot must stop in front of it.
-1. A service message called `tuos_ros_msgs/Approach` is available for you to use for this exercise. Use this to build your service server. Remember, you can find out more about this message using `rossrv info`.
+1. A service message called `tuos_msgs/Approach` is available for you to use for this exercise. Use this to build your service server. Remember, you can find out more about this message using `rossrv info`.
 1. We haven't really done much work with the LiDAR data published to the `/scan` topic yet, so you might want to consider [this suggested approach](scan_callback) for building a `/scan` callback function. <a name="ex4_ret"></a>
 
     !!! tip

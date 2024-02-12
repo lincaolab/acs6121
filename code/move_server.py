@@ -2,7 +2,7 @@
 
 import rospy
 from {BLANK}.msg import Twist # (1)!
-from tuos_ros_msgs.srv import SetBool, SetBoolResponse # (2)!
+from tuos_msgs.srv import SetBool, SetBoolResponse # (2)!
 
 service_name = "move_service"
 

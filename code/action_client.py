@@ -3,7 +3,7 @@
 import rospy # (1)!
 import actionlib # (2)!
 
-from tuos_ros_msgs.msg import CameraSweepAction, CameraSweepGoal, CameraSweepFeedback # (3)!
+from tuos_msgs.msg import CameraSweepAction, CameraSweepGoal, CameraSweepFeedback # (3)!
 
 node_name = "camera_sweep_action_client"
 action_server_name = "/camera_sweep_action_server"

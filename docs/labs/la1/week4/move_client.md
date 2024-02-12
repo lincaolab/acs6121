@@ -18,7 +18,7 @@ Copy **all** the code below into your `move_client.py` file and review the annot
 
 1. Again, the first step when building a Python node is to import the `rospy` library so that Python and ROS can interact. 
 
-2. This service client will use the `SetBool` service message from the `tuos_ros_msgs` package, so we import the full definition of the `SetBool` Service Message, as well as *the portion of the message that we will need to use to actually issue a service call*.
+2. This service client will use the `SetBool` service message from the `tuos_msgs` package, so we import the full definition of the `SetBool` Service Message, as well as *the portion of the message that we will need to use to actually issue a service call*.
 
 3. We import the Python `sys` module to do some error handling for us,  we don't need to worry about too much.
 
@@ -35,7 +35,7 @@ Copy **all** the code below into your `move_client.py` file and review the annot
 9. **Remember:** Using `rossrv info` on this service message in a terminal tells us the attribute names for both the **Request** and **Response**:
 
     ```bash
-    rossrv info tuos_ros_msgs/SetBool
+    rossrv info tuos_msgs/SetBool
     ```
     ...gives us the following:
     ```txt

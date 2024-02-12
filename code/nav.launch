@@ -2,7 +2,7 @@
 https://github.com/ROBOTIS-GIT/turtlebot3/blob/master/turtlebot3_navigation/launch/turtlebot3_navigation.launch
 -->
 <launch>
-  <include file="$(find tuos_ros_simulations)/launch/nav_world.launch" />
+  <include file="$(find tuos_simulations)/launch/nav_world.launch" />
 
   <!-- To be modified -->
   <arg name="map_file" default=" $(find week2_navigation)/maps/{map name}.yaml"/>

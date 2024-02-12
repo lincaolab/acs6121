@@ -51,7 +51,7 @@ It's also worth launching VS Code now, so that it's ready to go for when you nee
 
 ### Step 4: Download The Course Repo
 
-We've put together a few ROS packages of our own that you'll use throughout this course. These all live inside [the COM2009 Course Repo](https://github.com/tom-howard/COM2009) on GitHub, and you'll need to download this into the WSL-ROS environment now, before going any further.
+We've put together a few ROS packages of our own that you'll use throughout this course. These all live inside [the ROS Course Repo](https://github.com/tom-howard/tuos_ros) on GitHub, and you'll need to download this into the WSL-ROS environment now, before going any further.
 
 1. In **TERMINAL 1**, navigate to the Catkin Workspace `src` directory using the `cd` command:
 
@@ -68,7 +68,7 @@ We've put together a few ROS packages of our own that you'll use throughout this
     ***
     **TERMINAL 1:**
     ```bash
-    git clone https://github.com/tom-howard/COM2009.git
+    git clone https://github.com/tom-howard/tuos_ros.git
     ```
     ***
 
@@ -226,7 +226,7 @@ Another topic that should have appeared when you ran `rostopic list` earlier is 
     ***
     **TERMINAL 2:**
     ```bash
-    rosrun tuos_ros_examples robot_pose.py
+    rosrun tuos_examples robot_pose.py
     ```
     ***
         
@@ -345,7 +345,7 @@ In the previous session you learnt how to create a package and build simple node
         ```
     1. Then download the template code from GitHub:
         ```bash
-        wget -O odom_subscriber.py https://raw.githubusercontent.com/tom-howard/COM2009/main/tuos_ros_examples/src/odom_subscriber_template.py
+        wget -O odom_subscriber.py https://raw.githubusercontent.com/tom-howard/tuos_ros/main/tuos_examples/src/odom_subscriber_template.py
         ```
     1. Finally, make this executable using `chmod`:
         ```bash
@@ -391,7 +391,7 @@ In the previous session you learnt how to create a package and build simple node
 1. You need to add some additional code to the callback function now: 
     1. The node needs to print the robot's real-time odometry data to the terminal in the form: <code>(x,y,&#952;<sub>z</sub>)</code>.
     1. The format of the message has already been structured for you, but you need to add in the relevant variables that represent the correct elements of the robot's real-time pose.
-    1. You'll need to use the `euler_from_quaternion` function from the `tf.transformations` library to convert the raw orientation values from Quaternions into Radians. If you need a hint, why not have a look back [at this bit from earlier](#euler_angs), or at the source code for the `robot_pose.py` node that we launched from the `tuos_ros_examples` package in the [previous exercise](#ex1). 
+    1. You'll need to use the `euler_from_quaternion` function from the `tf.transformations` library to convert the raw orientation values from Quaternions into Radians. If you need a hint, why not have a look back [at this bit from earlier](#euler_angs), or at the source code for the `robot_pose.py` node that we launched from the `tuos_examples` package in the [previous exercise](#ex1). 
 
 1. Launch your node using `rosrun` and observe how the output (the formatted odometry data) changes whilst you move the robot around again using the `turtlebot3_teleop` node in a new terminal instance (**TERMINAL 3**).
 1. Stop your `odom_subscriber.py` node in **TERMINAL 2** and the `turtlebot3_teleop` node in **TERMINAL 3** by entering `Ctrl+C` in each of the terminals.
@@ -530,7 +530,7 @@ Use these pointers when working on your `move_circle.py` node!
 
 In this session you have learnt how to control the velocity and position of a robot from both the command-line (using ROS command-line tools) and from ROS Nodes by publishing correctly formatted messages to the `/cmd_vel` topic.  
 
-You have also learnt about *Odometry*, which is published by our robot to the `/odom` topic.  The odometry data tells us the current linear and angular velocities of our robot in relation to its 3 principal axes.  In addition to this though, it also tells us where in physical space our robot is located and oriented, which is determined based on *dead-reckoning*.  We'll talk more about dead-reckoning later on in the COM2009 lecture course, but for now though consider the following (based on what we've covered in this lab session): 
+You have also learnt about *Odometry*, which is published by our robot to the `/odom` topic.  The odometry data tells us the current linear and angular velocities of our robot in relation to its 3 principal axes.  In addition to this though, it also tells us where in physical space our robot is located and oriented, which is determined based on *dead-reckoning*.  Consider the following (based on what we've covered in this lab session): 
 
 * If odometry is derived from dead-reckoning, what information (sensor/actuator data) is used to do this?
 * Do you see any potential limitations of this?

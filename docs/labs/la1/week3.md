@@ -157,7 +157,7 @@ Odometry is really important for robot navigation, but it can be subject to drif
     ***
     **TERMINAL 2:**
     ```bash
-    roslaunch tuos_ros_simulations rviz.launch
+    roslaunch tuos_simulations rviz.launch
     ```
     ***
     
@@ -274,7 +274,7 @@ In combination, the data from the LiDAR sensor and the robot's odometry (the rob
     ***
     **TERMINAL 1:**
     ```bash
-    roslaunch tuos_ros_simulations nav_world.launch
+    roslaunch tuos_simulations nav_world.launch
     ```
     ***
 
@@ -441,7 +441,7 @@ As mentioned above, the map that you created in the previous exercise can now be
     ```
 
     1. Change `{map name}` to the name of *your map file* as created in the previous exercise (remove the `{}`s!).
-    1. Change the `initial_pose_x` and `initial_pose_y` default values. Current these are both set to `"0.0"`, but they need to be set to match the coordinates of the start zone of the `tuos_ros_simulations/nav_world` environment (we may have given you a clue about these in the table earlier!) 
+    1. Change the `initial_pose_x` and `initial_pose_y` default values. Current these are both set to `"0.0"`, but they need to be set to match the coordinates of the start zone of the `tuos_simulations/nav_world` environment (we may have given you a clue about these in the table earlier!) 
 
 1. Once you've made these changes, save the file and then launch it:
 

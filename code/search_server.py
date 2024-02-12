@@ -6,7 +6,7 @@ import rospy
 import actionlib
 
 # Import all the necessary ROS message types:
-from tuos_ros_msgs.msg import SearchAction, SearchFeedback, SearchResult, SearchGoal
+from tuos_msgs.msg import SearchAction, SearchFeedback, SearchResult, SearchGoal
 
 # Import the tb3 modules from tb3.py
 from tb3 import Tb3Move, Tb3Odometry, Tb3LaserScan

@@ -17,9 +17,6 @@ Copy **all** the code below into your `line_follower.py` file.  Then, review the
 3. We'll use the centroid component `cy` to determine how far the robot needs to turn in order to keep the line in the centre of its vision:
 
 4. We are implementing *proportional control* here.
-
-    ??? tip "COM2009 Students!"
-        PID control was covered by Prof Moore in Lecture 6!
     
     Ideally, we want the centre of the line on the floor to be in the centre of the robot's viewpoint at all times: this is our *target position*.  The *actual position* is where the line on the floor actually is, i.e.: the `cy` centroid component.  The *position error* is then the difference between the *actual* and *target* position:
 
@@ -32,7 +29,7 @@ Copy **all** the code below into your `line_follower.py` file.  Then, review the
 7. We then simply set these two velocities in our `robot_controller` object and then publish them to the `/cmd_vel` topic using methods from the `Tb3Move()` class. 
 
     !!! warning "Fill in the Blank!"
-        There is a method within the `Tb3Move()` class which allows us to publish a velocity command to the `/cmd_vel` topic. What is it? (Have a look at [the `tb3.py` source code](https://github.com/tom-howard/COM2009/blob/main/tuos_ros_examples/src/tb3.py) if you need a reminder).
+        There is a method within the `Tb3Move()` class which allows us to publish a velocity command to the `/cmd_vel` topic. What is it? (Have a look at [the `tb3.py` source code](https://github.com/tom-howard/tuos_ros/blob/main/tuos_examples/src/tb3.py) if you need a reminder).
 
 <p align="center">
   <a href="../../week6#ex4_ret">&#8592; Back to Week 6 - Exercise 4</a>

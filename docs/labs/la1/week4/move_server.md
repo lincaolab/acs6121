@@ -19,9 +19,9 @@ Copy **all** the code below into your `move_server.py` file and review the annot
 
 1. As you should know by now, in order to develop any ROS node in Python we first need to import the `rospy` library so that we can interact with ROS. We're also going to be issuing velocity commands to the robot, so we need to import the `Twist` message from the correct *message package* as well.
 
-1. We also need to import the *Service Message* that we want to use for the service that we will set up. This service will use the `SetBool` service message from a custom `tuos_ros_msgs` package that we've created for you.
+1. We also need to import the *Service Message* that we want to use for the service that we will set up. This service will use the `SetBool` service message from a custom `tuos_msgs` package that we've created for you.
 
-    Here, we import two different things from the `tuos_ros_msgs` package:
+    Here, we import two different things from the `tuos_msgs` package:
 
     1. A definition of the *full service message*: `SetBool`, which we need to use when we create the service later.
     1. The **Response** portion of the service message: `SetBoolResponse`, which we will use to issue a response to the service caller.
@@ -37,7 +37,7 @@ Copy **all** the code below into your `move_server.py` file and review the annot
 1. We then analyse the service **Request** data (this is the data that is passed to the Server node, whenever a call to the service is made by a caller, or *client*). We know how to access the data within the service request from using the `rossrv info` command, which provides us with the following information:
 
     ```txt
-    rossrv info tuos_ros_msgs/SetBool:
+    rossrv info tuos_msgs/SetBool:
 
     bool request_signal
     ---
@@ -60,7 +60,7 @@ Copy **all** the code below into your `move_server.py` file and review the annot
 1. Finally, we can format a service **Response** using the `SetBoolResponse` instance that we set up earlier (`service_response`). Again, we know the names of the attributes in the service response from the `rossrv info` command:
 
     ```txt
-    rossrv info tuos_ros_msgs/SetBool:
+    rossrv info tuos_msgs/SetBool:
 
     bool request_signal
     ---

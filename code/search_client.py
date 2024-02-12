@@ -4,7 +4,7 @@
 import rospy
 import actionlib
 
-from tuos_ros_msgs.msg import SearchAction, SearchGoal, SearchFeedback
+from tuos_msgs.msg import SearchAction, SearchGoal, SearchFeedback
 
 class SearchActionClient():
     goal = SearchGoal()

@@ -61,7 +61,7 @@ We'll play a little game here. We're going to launch our TurtleBot3 Waffle in a 
     ***
     **TERMINAL 1:**
     ```bash
-    roslaunch tuos_ros_simulations mystery_world.launch
+    roslaunch tuos_simulations mystery_world.launch
     ```
     ***
 
@@ -76,7 +76,7 @@ We'll play a little game here. We're going to launch our TurtleBot3 Waffle in a 
     ***
     **WT(A) TERMINAL 2:**
     ```bash
-    roslaunch tuos_ros_examples camera_sweep.launch
+    roslaunch tuos_examples camera_sweep.launch
     ```
     ***
 
@@ -141,7 +141,7 @@ We'll play a little game here. We're going to launch our TurtleBot3 Waffle in a 
     Which should provide you with the following:
 
     ```txt
-    rostopic pub /camera_sweep_action_server/goal tuos_ros_msgs/CameraSweepActionGoal "header:
+    rostopic pub /camera_sweep_action_server/goal tuos_msgs/CameraSweepActionGoal "header:
       seq: 0
       stamp:
       secs: 0
@@ -263,7 +263,7 @@ rostopic info /camera_sweep_action_server/goal
 From which we obtain the usual information:
 
 ```txt    
-Type: tuos_ros_msgs/CameraSweepActionGoal
+Type: tuos_msgs/CameraSweepActionGoal
 
 Publishers: None
 
@@ -272,7 +272,7 @@ Subscribers:
 ```
 ***
 
-The `Type` field tells us that the action message belongs to the `tuos_ros_msgs` package, and we can find out more about the `goal` message by using `rosmsg info`. You'll be familiar with how this works by now:
+The `Type` field tells us that the action message belongs to the `tuos_msgs` package, and we can find out more about the `goal` message by using `rosmsg info`. You'll be familiar with how this works by now:
 
 ```txt
 rosmsg info {messageType}
@@ -281,7 +281,7 @@ rosmsg info {messageType}
 Where `{messageType}` is established from the output of the `rostopic info` command above: 
 
 ```txt
-Type: tuos_ros_msgs/CameraSweepActionGoal
+Type: tuos_msgs/CameraSweepActionGoal
 ```
 
 When working with ROS Actions and the `rosmsg` command though, we can actually drop the word "`Action`" in the message Type, so our `rosmsg` command becomes:
@@ -289,7 +289,7 @@ When working with ROS Actions and the `rosmsg` command though, we can actually d
 ***
 **TERMINAL 1:**
 ```bash
-rosmsg info tuos_ros_msgs/CameraSweepGoal
+rosmsg info tuos_msgs/CameraSweepGoal
 ```
 Which will output:
 
@@ -300,7 +300,7 @@ int32 image_count
 ***
 
 ??? info "Further Info"
-    `rosmsg info tuos_ros_msgs/CameraSweepActionGoal` will work as well, but we get a lot of other information in the output that we're not all that interested in. Give it a go and see the difference, if you want to!
+    `rosmsg info tuos_msgs/CameraSweepActionGoal` will work as well, but we get a lot of other information in the output that we're not all that interested in. Give it a go and see the difference, if you want to!
 
 In order to call this action server, we need to send a **goal**, and `rosmsg info` has just told us that there are **two** goal parameters that we must provide:
 
@@ -311,12 +311,12 @@ So we know more about our Action Server's *Goal* now, but there are two other pa
 
 #### "Goal," "Feedback" and "Result"
 
-We know, from above, that the `/camera_sweep_action_server` messages are part of the `tuos_ros_msgs` package, so we can navigate to the package directory (using `roscd`) and look at the actual message definition. 
+We know, from above, that the `/camera_sweep_action_server` messages are part of the `tuos_msgs` package, so we can navigate to the package directory (using `roscd`) and look at the actual message definition. 
 
 ***
 **TERMINAL 1:**
 ```bash
-roscd tuos_ros_msgs/
+roscd tuos_msgs/
 ```
 ***
 
@@ -367,7 +367,7 @@ An Action Server provides **feedback** messages at regular intervals whilst perf
 
 1. You should only have one Windows Terminal application instance open now, with three WSL-ROS terminal tabs in it. **TERMINAL 3** should already be idle (i.e. not running any commands), and (if you haven't done so already) enter `Ctrl+C` in **TERMINAL 1** and **TERMINAL 2** to stop the headless Gazebo simulation processes and the Camera Sweep Action Server respectively. 
 
-1. In **TERMINAL 1** create a new package called `week5_actions` using the `catkin_create_pkg` tool [as you have done previously](../week4/#ex1). This time, define `rospy`, `actionlib` and `tuos_ros_msgs` as dependencies.
+1. In **TERMINAL 1** create a new package called `week5_actions` using the `catkin_create_pkg` tool [as you have done previously](../week4/#ex1). This time, define `rospy`, `actionlib` and `tuos_msgs` as dependencies.
     
     !!! tip "Remember"
         Make sure you're in your `~/catkin_ws/src/` folder when you run the `catkin_create_pkg` command!
@@ -395,7 +395,7 @@ An Action Server provides **feedback** messages at regular intervals whilst perf
     ***
     **TERMINAL 2:**
     ```bash
-    roslaunch tuos_ros_simulations mystery_world.launch gui:=true camera_search:=true
+    roslaunch tuos_simulations mystery_world.launch gui:=true camera_search:=true
     ```
     
     ... which will launch the Gazebo simulation in GUI mode this time, as well as the `/camera_sweep_action_server` too.
@@ -492,7 +492,7 @@ This mechanism is therefore useful for robotic operations that may take a long t
 So far we have looked at how to call an action server, but what about if we actually want to set up our own? We've been working with a pre-made action server in the previous exercises, but so far we haven't really considered how it actually works. First, let's do some detective work... We launched the Action Server using `roslaunch` in Exercise 1:
 
 ```bash
-roslaunch tuos_ros_examples camera_sweep.launch
+roslaunch tuos_examples camera_sweep.launch
 ```
 
 !!! note "Questions"
@@ -599,20 +599,20 @@ roslaunch turtlebot3_gazebo turtlebot3_stage_4.launch
     * The action server should make the robot move forwards until it detects an obstacle up ahead.
     * Similarly to the *Service* Server that you created last week, your *Action* Server here should be configured to accept two **goal** parameters:
         1. The speed (in m/s) at which the robot should move forwards when the action server is called. Consider doing some error checking on this to make sure a velocity request is less than the maximum speed that the robot can actually achieve (0.26 m/s)!
-        1. The distance (in meters) at which the robot should stop ahead of any objects or boundary walls that are in front of it. To do this you'll need to subscribe to the `/scan` topic. Be aware that an object won't necessarily be directly in front of the robot, so you may need to monitor a range of `LaserScan` data points (within the `ranges` array) to make the collision avoidance effective (recall the [LaserScan callback example](../week4/scan_callback) and also have a look at the `Tb3LaserScan` class within the `tuos_ros_examples/tb3.py` module that might help you with this).
+        1. The distance (in meters) at which the robot should stop ahead of any objects or boundary walls that are in front of it. To do this you'll need to subscribe to the `/scan` topic. Be aware that an object won't necessarily be directly in front of the robot, so you may need to monitor a range of `LaserScan` data points (within the `ranges` array) to make the collision avoidance effective (recall the [LaserScan callback example](../week4/scan_callback) and also have a look at the `Tb3LaserScan` class within the `tuos_examples/tb3.py` module that might help you with this).
     * Whilst your server performs its task it should provide the following **feedback** to the Action Caller:
         1. The distance travelled (in meters) since the current action was initiated.
 
-            To do this you'll need to subscribe to the `/odom` topic. Remember that there's a `Tb3Odometry` class within [the `tuos_ros_examples/tb3.py` module](#tb3_module) that might help you with obtaining this data.
+            To do this you'll need to subscribe to the `/odom` topic. Remember that there's a `Tb3Odometry` class within [the `tuos_examples/tb3.py` module](#tb3_module) that might help you with obtaining this data.
             
             Remember also that your robot's orientation shouldn't change over the course of a single action call, only its `linear.x` and `linear.y` positions should vary.  Bear in mind however that the robot won't necessarily be moving along the `X` or `Y` axis, so you will need to consider the total distance travelled in the `X-Y` plane.  You should have done this in the [Week 3 `move_square` exercise](../week3/#ex1), so refer to this if you need a reminder.
 
     * Finally, on completion of the action, your server should provide the following *three* **result** parameters:
         1. The *total* distance travelled (in meters) over the course of the action.
         1. The distance to the obstacle that made the robot stop (this should match, or very close to, the distance that was provided by the Action Client in the **goal**).
-        1. The angle (in degrees) at which this obstacle is located in front of the robot (`Tb3LaserScan` class within the `tuos_ros_examples/tb3.py` module, which may already provide this).
+        1. The angle (in degrees) at which this obstacle is located in front of the robot (`Tb3LaserScan` class within the `tuos_examples/tb3.py` module, which may already provide this).
 
-1. An action message has been created for you to use for this exercise: `tuos_ros_msgs/Search.action`.  Navigate to the `action` folder of the `tuos_ros_msgs` package directory (or use `rosmsg info ...` in the terminal) to find out everything you need to know about this action message in order to develop your Action Server (and Client) nodes appropriately.
+1. An action message has been created for you to use for this exercise: `tuos_msgs/Search.action`.  Navigate to the `action` folder of the `tuos_msgs` package directory (or use `rosmsg info ...` in the terminal) to find out everything you need to know about this action message in order to develop your Action Server (and Client) nodes appropriately.
 
 1. We've put together [some template code](search_server) to help you with this. For further guidance though, you should also refer to the code for `/camera_sweep_action_server` node, which [we talked about earlier](#cam_swp_act_srv): a lot of the techniques used by `/camera_sweep_action_server` node will be similar to what you'll need to do in this exercise. <a name="ex4_ret"></a>
 

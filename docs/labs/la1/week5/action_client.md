@@ -16,7 +16,7 @@ Copy **all** the code below into your `move_client.py` file.  Then, review the c
 
 2. If we want to work with ROS Actions, we also need to import `actionlib`.
 
-3. We know that the `/camera_sweep_action_server` uses `CameraSweepAction` messages from the `tuos_ros_msgs` package, so we import the full message definition: `CameraSweepAction` as well as the `Goal` message (which we use to actually make a call to the server). 
+3. We know that the `/camera_sweep_action_server` uses `CameraSweepAction` messages from the `tuos_msgs` package, so we import the full message definition: `CameraSweepAction` as well as the `Goal` message (which we use to actually make a call to the server). 
 
     As we now know, ROS Actions provide **feedback**, so we're also importing the `Feedback` part of the `CameraSweepAction` message into our client node as well, so that it can be kept up to date with what the Action Server is doing, in real-time.
 
@@ -56,7 +56,7 @@ Copy **all** the code below into your `move_client.py` file.  Then, review the c
     Which attribute of the `feedback_data` object tells us how many images have been captured over the course of the *Camera Sweep* Action? There are a number of ways we can work this out:
         
     1. You could use the same approach as we used [earlier](../#camera_sweep_msg_params). 
-    1. You could run `rosmsg info tuos_ros_msgs/CameraSweepFeedback` in a terminal.
+    1. You could run `rosmsg info tuos_msgs/CameraSweepFeedback` in a terminal.
     1. You could use the autocomplete/variable suggestions provided in VS Code!
 
 <p align="center">

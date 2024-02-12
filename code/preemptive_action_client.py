@@ -3,7 +3,7 @@
 import rospy
 import actionlib
 
-from tuos_ros_msgs.msg import CameraSweepAction, CameraSweepGoal, CameraSweepFeedback
+from tuos_msgs.msg import CameraSweepAction, CameraSweepGoal, CameraSweepFeedback
 
 class preemptiveActionClient(): # (1)!
     goal = CameraSweepGoal() # (2)!
