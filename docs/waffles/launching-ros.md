@@ -85,8 +85,10 @@ roslaunch tuos_tb3_tools ros.launch
 
 After a short while, you should see a message like this:
 
-```txt
-[INFO] [#####] Calibration End  
+``` { .txt .no-copy }
+[INFO] [#####] --------------------------
+[INFO] [#####] dia-waffleX is up and running!
+[INFO] [#####] -------------------------- 
 ```
 
 <center>
@@ -95,13 +97,17 @@ After a short while, you should see a message like this:
 
 </center>
 
-You shouldn't need to interact with this terminal instance any more now. You can either keep it open in the background (to keep an eye on any status messages coming through), or you can close down the terminal instance entirely. If you want to close it down then hit the :material-close-circle: button in the top right of the terminal window. You'll then see the following message:
+You shouldn't need to interact with this terminal instance any more now, but after about 20 seconds the screen will clear, and you'll be presented with some real-time info related to the status of the robot. Keep this terminal instance open in the background and keep an eye on the `Voltage` indicator in particular:
 
-<figure markdown>
-  ![](../images/laptops/term_confirm_close.png){width=600px}
-</figure>
+``` { .txt .no-copy } 
+Voltage: 12.40V [100%]
+```
 
-... just click "Close Terminal."
+!!! info "Low Battery :material-battery-low:"
+
+    **The robot's battery won't last a full 2-hour lab session!!**
+
+    When the capacity indicator reaches around 15% then let a member of the teaching team know and we'll replace the battery for you. (It's easier to do it at this point, rather than waiting until it runs completely flat.)
 
 !!! warning
     When you've finished working with a robot it's really important to **shut it down properly** before turning off the power switch. Please refer to the [safe shutdown procedure](../shutdown) detailed here.
