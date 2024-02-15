@@ -2,8 +2,11 @@
 title: "Launching Visual Studio Code in WSL-ROS"  
 ---
 
-!!! info
-    On the University Managed Desktops, you should follow these steps to launch VS Code every time you need to use it!
+!!! warning
+    
+    This page is out of date, you can find more up-to-date information here:  
+    <a href="https://tom-howard.github.io/ros/software/on-campus/vscode/" target="_blank">tom-howard.github.io/ros/software/on-campus/vscode</a>
+
 
 ## Procedure {#the-top}
 

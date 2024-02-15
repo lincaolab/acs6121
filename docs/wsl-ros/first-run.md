@@ -1,5 +1,10 @@
 # Launching WSL-ROS for the First Time
 
+!!! warning
+    
+    This page is out of date, you can find more up-to-date information here:  
+    <a href="https://tom-howard.github.io/ros/software/on-campus/getting-started/" target="_blank">tom-howard.github.io/ros/software/on-campus/getting-started</a> 
+
 Click the Windows Start Menu button: ![](../images/wsl/win_start_button.png)
     
 Then, start typing `"wsl-ros"` and click on the application shortcut that should then appear in the list:

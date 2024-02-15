@@ -1,5 +1,10 @@
 # Configuring Visual Studio Code
 
+!!! warning
+    
+    This page is out of date, you can find more up-to-date information here:  
+    <a href="https://tom-howard.github.io/ros/software/on-campus/vscode/" target="_blank">tom-howard.github.io/ros/software/on-campus/vscode</a>
+
 *Visual Studio Code* (or *'VS Code'*, for short) should be installed on all the University of Sheffield Managed Desktop Computers in the Diamond Computer Rooms. This is a great *Integrated Development Environment (IDE)* that we'll use extensively alongside WSL-ROS. We first need to make sure it's set up correctly though, so follow the steps below **now** to install the *"Remote - WSL"* VS Code extension, in preparation for later.
 
 !!! tip
