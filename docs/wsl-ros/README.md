@@ -8,6 +8,6 @@ To support these courses we've created a custom ROS (Noetic) and Ubuntu (20.04) 
 
 <center>
   <strong>
-    <a href="https://tom-howard.github.io/ros/software/wsl-ros/on-campus/" target="_blank">tom-howard.github.io/ros/software/wsl-ros/on-campus</a>
+    <a href="https://tom-howard.github.io/ros/software/wsl-ros/" target="_blank">tom-howard.github.io/ros/software/wsl-ros</a>
   </strong>
 </center>
